@@ -1,0 +1,69 @@
+@tailwind base; /* وارد کردن استایل‌های پایه‌ای از Tailwind */
+@tailwind components; /* وارد کردن استایل‌های کامپوننت‌ها از Tailwind */
+@tailwind utilities; /* وارد کردن ابزارهای کمکی از Tailwind */
+
+/* استایل button با گرادیانت خاص و سایه */
+.btn {
+  background: linear-gradient(
+    92.23deg,
+    #4c4f80 21.43%,
+    /* رنگ شروع گرادیانت */ #5a6194 50.63%,
+    /* رنگ میانی گرادیانت */ #6873a8 100%,
+    /* رنگ پایانی گرادیانت */ #7b89bd 117.04% /* گسترش گرادیانت */
+  );
+  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51); /* سایه در اطراف دکمه */
+}
+
+/* تغییر گرادیانت هنگام هاور روی دکمه */
+.btn:hover {
+  background: linear-gradient(
+    92.23deg,
+    #7b89bd 21.43%,
+    /* رنگ شروع تغییر کرده */ #6873a8 50.63%,
+    /* رنگ میانی تغییر کرده */ #5a6194 100%,
+    /* رنگ پایانی تغییر کرده */ #4c4f80 117.04% /* گسترش تغییر کرده */
+  );
+}
+
+/* استایل خاص برای کلاس‌های gradient و active */
+.gradient,
+.active {
+  background: linear-gradient(
+    92.23deg,
+    #4c4f80 21.43%,
+    /* رنگ شروع گرادیانت */ #5a6194 50.63%,
+    /* رنگ میانی گرادیانت */ #6873a8 100%,
+    /* رنگ پایانی گرادیانت */ #7b89bd 117.04% /* گسترش گرادیانت */
+  );
+}
+
+/* استایل برای حالت active */
+.active {
+  color: #fff;
+  padding: 1rem;
+  border-radius: 100%;
+}
+
+/* ایجاد استایل‌های پایه‌ای سفارشی */
+@layer base {
+  body {
+    @apply font-secondary text-lg leading-8 text-white; /* فونت، اندازه، فاصله خط و رنگ متن پیش‌فرض */
+  }
+
+  .h2 {
+    @apply font-primary text-[32px] lg:text-[40px] mb-6 tracking-[10%] uppercase text-accent font-bold; /* عنوان بزرگ با فونت و استایل خاص */
+  }
+  .h3 {
+    @apply font-primary text-black font-bold text-[18px] lg:text-[25px]; /* عنوان کوچک با استایل خاص */
+  }
+  .btn {
+    @apply rounded-full font-primary text-primary font-medium; /* دکمه گرد با فونت و رنگ خاص */
+  }
+  .btn-lg {
+    @apply h-[56px] px-10 text-base; /* دکمه بزرگ با ارتفاع و فاصله داخلی */
+  }
+
+  .section {
+    @apply py-8 lg:py-24 lg:h-screen flex items-center; /* استایل بخش‌ها با فاصله، ارتفاع و چینش مرکزی */
+  }
+}
